@@ -1,19 +1,16 @@
-SELECT A.PLAYER_NAME AS Ό±ΌφΈν, A.BACK_NO ASΉι³ΡΉφ,
-        B.REGION_NAME AS Ώ¬°νΑφ, B.TEAM_NAME AS ΖΐΈν
+
+SELECT A.PLAYER_NAME AS μ„ μλª…, A.BACK_NO ASλ°±λ„λ²„,
+        B.REGION_NAME AS μ—°κ³ μ§€, B.TEAM_NAME AS ν€λª…
 FROM PLAYER A, TEAM B
 WHERE A.POSITION = 'GK'
 AND B.TEAM_ID=A.TEAM_ID
 ORDER BY A.BACK_NO;
 
-SELECT *
-from salgrade;
 
-
-SELECT A.PLAYER_NAME AS Ό±ΌφΈν, A.POSITION AS ΖχΑφΌΗ,
-        B. REGION_NAME AS Ώ¬°νΑφ, B.TEAM_NAME AS ΖΐΈν,
-        C.STADIUM_NAME AS ±ΈΐεΈν
+SELECT A.PLAYER_NAME AS μ„ μλª…, A.POSITION AS ν¬μ§€μ…,
+        B. REGION_NAME AS μ—°κ³ μ§€, B.TEAM_NAME AS ν€λª…,
+        C.STADIUM_NAME AS κµ¬μ¥λª…
     FROM PLAYER A, TEAM B, STADIUM C
     WHERE B.TEAM_ID=A.TEAM_ID
     AND C.STADIUM_ID=B.STADIUM_ID
-ORDER BY Ό±ΌφΈν;
-
+ORDER BY μ„ μλª…;
