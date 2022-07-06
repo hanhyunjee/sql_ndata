@@ -25,3 +25,5 @@ VALUES(board_seq.NEXTVAL, 'Àü¿øÁö', 'one@nate.com', '1111', '°¹°ñ¸¶À»', 'µÅÁö»ï°
 
 commit;
 
+
+
