@@ -1,62 +1,62 @@
--- ì‚¬ì› ì´ë¦„ì— SCOTT ë‹¨ì–´ê°€ ê°™ì€ ë°ì´í„° ì¶œë ¥ // í¬í•¨ëœì´ëƒ, ê°™ì€ì´ëƒ ì£¼ì˜
--- UPPER í•¨ìˆ˜ë¡œ ë¬¸ìžì—´ ë¹„êµ
+-- »ç¿ø ÀÌ¸§¿¡ SCOTT ´Ü¾î°¡ °°Àº µ¥ÀÌÅÍ Ãâ·Â // Æ÷ÇÔµÈÀÌ³Ä, °°ÀºÀÌ³Ä ÁÖÀÇ
+-- UPPER ÇÔ¼ö·Î ¹®ÀÚ¿­ ºñ±³
 SELECT * 
     FROM emp 
     WHERE UPPER(ename) = UPPER('scott');
 
--- ì‚¬ì› ì´ë¦„ì— SCOTT ë‹¨ì–´ê°€ í¬í•¨ëœ ë°ì´í„° ì¶œë ¥ // í¬í•¨ëœì´ëƒ, ê°™ì€ì´ëƒ ì£¼ì˜
--- UPPER í•¨ìˆ˜ë¡œ ë¬¸ìžì—´ ë¹„êµ
+-- »ç¿ø ÀÌ¸§¿¡ SCOTT ´Ü¾î°¡ Æ÷ÇÔµÈ µ¥ÀÌÅÍ Ãâ·Â // Æ÷ÇÔµÈÀÌ³Ä, °°ÀºÀÌ³Ä ÁÖÀÇ
+-- UPPER ÇÔ¼ö·Î ¹®ÀÚ¿­ ºñ±³
 SELECT * 
     FROM emp 
     WHERE UPPER(ename) LIKE UPPER('%scott');
     
--- ì‚¬ì›ì˜ ì´ë¦„ ê¸¸ì´ê°€ 5ê¸€ìž ì´ìƒì¸ í–‰ ì¶œë ¥
+-- »ç¿øÀÇ ÀÌ¸§ ±æÀÌ°¡ 5±ÛÀÚ ÀÌ»óÀÎ Çà Ãâ·Â
 SELECT ename, LENGTH(ename) 
     FROM emp 
     WHERE LENGTH(ename) >= 5;
 
--- í•œê¸€ì˜ ê²½ìš° ê¸€ìžë‹¨ìœ„ì™€ ë°”ì´íŠ¸ ë‹¨ìœ„ê°€ ìžˆë‹¤.
--- LENGTH = ê¸€ìžë‹¨ìœ„ë¡œ í‘œí˜„ / LENGTHB = ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ í‘œí˜„
--- LENGTHë¥¼ ì‚¬ìš©í•˜ëŠ”ê²Œ ì¢‹ë‹¤
-SELECT LENGTH('í•œê¸€'), LENGTHB('í•œê¸€') FROM dual;
+-- ÇÑ±ÛÀÇ °æ¿ì ±ÛÀÚ´ÜÀ§¿Í ¹ÙÀÌÆ® ´ÜÀ§°¡ ÀÖ´Ù.
+-- LENGTH = ±ÛÀÚ´ÜÀ§·Î Ç¥Çö / LENGTHB = ¹ÙÀÌÆ® ´ÜÀ§·Î Ç¥Çö
+-- LENGTH¸¦ »ç¿ëÇÏ´Â°Ô ÁÁ´Ù
+SELECT LENGTH('ÇÑ±Û'), LENGTHB('ÇÑ±Û') FROM dual;
 
--- ì´ë¦„ ê¸€ìžì˜ ì¼ë¶€ë¥¼ ì¶”ì¶œí•˜ê³ ìž í•œë‹¤
--- 1. ì²˜ìŒë¶€í„° 2ê¸€ìž ì¶”ì¶œ
--- 2. 3ë²ˆì§¸ì—ì„œë¶€í„° 2ê¸€ìž ì¶”ì¶œ
--- 3. 5ë²ˆì§¸ ê¸€ìžë§Œ ì¶”ì¶œ
--- SUBSTR : ë¬¸ìžì—´ ì¼ë¶€ ì¶”ì¶œí•¨ìˆ˜
+-- ÀÌ¸§ ±ÛÀÚÀÇ ÀÏºÎ¸¦ ÃßÃâÇÏ°íÀÚ ÇÑ´Ù
+-- 1. Ã³À½ºÎÅÍ 2±ÛÀÚ ÃßÃâ
+-- 2. 3¹øÂ°¿¡¼­ºÎÅÍ 2±ÛÀÚ ÃßÃâ
+-- 3. 5¹øÂ° ±ÛÀÚ¸¸ ÃßÃâ
+-- SUBSTR : ¹®ÀÚ¿­ ÀÏºÎ ÃßÃâÇÔ¼ö
 SELECT ename, SUBSTR(ename, 1, 2), SUBSTR(ename, 3, 2), SUBSTR(ename, 5) FROM emp;
 
--- íŠ¹ì •ë¬¸ìžì—´ ì°¾ê¸°
--- ë¬¸ìžì—´ ë°ì´í„° ì•ˆì—ì„œ íŠ¹ì • ë¬¸ìž ìœ„ì¹˜ë¥¼ ì°¾ëŠ”í•¨ìˆ˜ INSTR
+-- Æ¯Á¤¹®ÀÚ¿­ Ã£±â
+-- ¹®ÀÚ¿­ µ¥ÀÌÅÍ ¾È¿¡¼­ Æ¯Á¤ ¹®ÀÚ À§Ä¡¸¦ Ã£´ÂÇÔ¼ö INSTR
 SELECT INSTR('HELLO ORACLE!', 'L') AS INSTR_1, 
        INSTR('HELLO ORACLE!', 'L', 5) AS INSTR_2,
        INSTR('HELLO ORACLE!', 'L', 2, 2) AS INSTR_3
 FROM dual;
 
--- íŠ¹ì • ë¬¸ìžì—´ ë°”ê¾¸ê¸°
--- íŠ¹ì •ë¬¸ìžë¥¼ ë‹¤ë¥¸ë¬¸ìžë¡œ ë°”ê¾¸ëŠ” REPLACE í•¨ìˆ˜   
+-- Æ¯Á¤ ¹®ÀÚ¿­ ¹Ù²Ù±â
+-- Æ¯Á¤¹®ÀÚ¸¦ ´Ù¸¥¹®ÀÚ·Î ¹Ù²Ù´Â REPLACE ÇÔ¼ö   
 SELECT '010-1234-5678' AS REPLACE_BEFORE,
        REPLACE('010-1234-5678', '-', ' ') AS REPLACE_1,
        REPLACE('010-1234-5678', '-') AS REPLACE_2
 FROM dual;    
     
--- íŠ¹ì • ë¬¸ìžì—´ ì±„ìš°ê¸°
--- ë°ì´í„°ì˜ ë¹ˆ ê³µê°„ì„ íŠ¹ì • ë¬¸ìžë¡œ ì±„ìš°ëŠ” LPAD, RPAD í•¨ìˆ˜
--- RPADë¡œ ê°œì¸ì •ë³´ ë’·ìžë¦¬ *ë¡œ í‘œì‹œ ì¶œë ¥
+-- Æ¯Á¤ ¹®ÀÚ¿­ Ã¤¿ì±â
+-- µ¥ÀÌÅÍÀÇ ºó °ø°£À» Æ¯Á¤ ¹®ÀÚ·Î Ã¤¿ì´Â LPAD, RPAD ÇÔ¼ö
+-- RPAD·Î °³ÀÎÁ¤º¸ µÞÀÚ¸® *·Î Ç¥½Ã Ãâ·Â
 SELECT RPAD('971225-', 14, '*') AS RPAD_JMNO,
        RPAD('010-1234-', 13, '*') AS RPAD_PHONE 
 FROM dual;
 
--- ë‘ ì—´ ì‚¬ì´ì— : ë„£ê³  ì—°ê²°
--- ë‘ ë¬¸ìžì—´ì„ í•©ì¹˜ëŠ” CONCAT í•¨ìˆ˜
+-- µÎ ¿­ »çÀÌ¿¡ : ³Ö°í ¿¬°á
+-- µÎ ¹®ÀÚ¿­À» ÇÕÄ¡´Â CONCAT ÇÔ¼ö
 SELECT CONCAT(empno, ename),
        CONCAT(empno, CONCAT(' : ', ename))
 FROM emp
 WHERE ename = 'SCOTT';
 
--- TRIM í•¨ìˆ˜ë¡œ ê³µë°± ì œê±°
--- íŠ¹ì •ë¬¸ìžë¥¼ ì§€ìš°ëŠ” TRIM,LTRIM,RTRIM í•¨ìˆ˜
+-- TRIM ÇÔ¼ö·Î °ø¹é Á¦°Å
+-- Æ¯Á¤¹®ÀÚ¸¦ Áö¿ì´Â TRIM,LTRIM,RTRIM ÇÔ¼ö
 SELECT '[' || TRIM(' _Oracle_ ') || ']' AS TRIM,
        '[' || LTRIM(' _Oracle_ ') || ']' AS LTRIM,
        '[' || LTRIM('<_Oracle_>', '_<') || ']' AS LTRIM_2,
@@ -64,13 +64,13 @@ SELECT '[' || TRIM(' _Oracle_ ') || ']' AS TRIM,
        '[' || RTRIM('<_Oracle_>', '>_') || ']' AS RTRIM_2
 FROM dual;
 
--- ìˆ«ìžì™€ ê´€ë ¨ëœ í•¨ìˆ˜
--- TRUNC : íŠ¹ì • ìœ„ì¹˜ì—ì„œ ë²„ë¦¼í•œ ê°’
--- CEIL : ì§€ì •ëœ ìˆ«ìžë³´ë‹¤ í° ì •ìˆ˜ ì¤‘ ê°€ìž‘ ìž‘ì€ ì •ìˆ˜(ì§€ì •í•œ ìˆ«ìžì™€ ê°€ê¹Œìš´ ì •ìˆ˜ë¥¼ ì°¾ëŠ”ë‹¤)
--- FLOOR : ì§€ì •ëœ ìˆ«ìžë³´ë‹¤ í° ì •ìˆ˜ ì¤‘ ê°€ìž¥ í° ì •ìˆ˜
--- MOD : ìˆ«ìžë¥¼ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ ê°’ì„ êµ¬í•œë‹¤
+-- ¼ýÀÚ¿Í °ü·ÃµÈ ÇÔ¼ö
+-- TRUNC : Æ¯Á¤ À§Ä¡¿¡¼­ ¹ö¸²ÇÑ °ª
+-- CEIL : ÁöÁ¤µÈ ¼ýÀÚº¸´Ù Å« Á¤¼ö Áß °¡ÀÛ ÀÛÀº Á¤¼ö(ÁöÁ¤ÇÑ ¼ýÀÚ¿Í °¡±î¿î Á¤¼ö¸¦ Ã£´Â´Ù)
+-- FLOOR : ÁöÁ¤µÈ ¼ýÀÚº¸´Ù Å« Á¤¼ö Áß °¡Àå Å« Á¤¼ö
+-- MOD : ¼ýÀÚ¸¦ ³ª´« ³ª¸ÓÁö °ªÀ» ±¸ÇÑ´Ù
 
--- íŠ¹ì • ìœ„ì¹˜ì—ì„œ ë°˜ì˜¬ë¦¼í•˜ëŠ” ROUND í•¨ìˆ˜
+-- Æ¯Á¤ À§Ä¡¿¡¼­ ¹Ý¿Ã¸²ÇÏ´Â ROUND ÇÔ¼ö
 SELECT ROUND(1234.5678) AS ROUND,
        ROUND(1234.5678, 0) AS ROUND_0,
        ROUND(1234.5678, 1) AS ROUND_1,
@@ -79,28 +79,28 @@ SELECT ROUND(1234.5678) AS ROUND,
        ROUND(1234.5678, -2) AS ROUND_MINUS2
 FROM dual;
   
--- ë‚ ì§œ í‘œì‹œ
+-- ³¯Â¥ Ç¥½Ã
 SELECT SYSDATE AS NOW,
        SYSDATE-1 AS YESTERDAY,
        SYSDATE+1 AS TOMORROW
 FROM dual;
 
--- 3ê°œì›” í›„ ë‚  ì§œ í‘œì‹œ
+-- 3°³¿ù ÈÄ ³¯ Â¥ Ç¥½Ã
 SELECT SYSDATE,
        ADD_MONTHS(SYSDATE, 3)
 FROM dual;
 
--- ìž…ì‚¬ 10ì£¼ë…„ì´ ë˜ëŠ” ì‚¬ì›ë“¤ì˜ ë°ì´í„° ì¶œë ¥
+-- ÀÔ»ç 10ÁÖ³âÀÌ µÇ´Â »ç¿øµéÀÇ µ¥ÀÌÅÍ Ãâ·Â
 SELECT empno, ename, hiredate,
        ADD_MONTHS(hiredate, 120) AS WORK10YEAR
 FROM emp;
 
--- í˜„ìž¬ì˜ ë‚ ì§œì™€ ì‹œê°„ ì¶œë ¥
--- ë‚ ì§œ, ìˆ«ìž ë°ì´í„°ë¥¼ ë¬¸ìž ë°ì´í„°ë¡œ ë³€í™˜í•˜ëŠ” TO_CHAR í•¨ìˆ˜
-SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:MI:SS') AS í˜„ìž¬ë‚ ì§œì‹œê°„
+-- ÇöÀçÀÇ ³¯Â¥¿Í ½Ã°£ Ãâ·Â
+-- ³¯Â¥, ¼ýÀÚ µ¥ÀÌÅÍ¸¦ ¹®ÀÚ µ¥ÀÌÅÍ·Î º¯È¯ÇÏ´Â TO_CHAR ÇÔ¼ö
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:MI:SS') AS ÇöÀç³¯Â¥½Ã°£
 FROM dual;
 
--- ì›”ê³¼ ìš”ì¼ì˜ ë‹¤ì–‘í•œ í˜•ì‹
+-- ¿ù°ú ¿äÀÏÀÇ ´Ù¾çÇÑ Çü½Ä
 SELECT SYSDATE,
        TO_CHAR(SYSDATE, 'MM') AS MM,
        TO_CHAR(SYSDATE, 'MON') AS MON,
