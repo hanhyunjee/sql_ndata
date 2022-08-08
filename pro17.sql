@@ -1,5 +1,5 @@
 DROP TABLE t_member;
--- È¸¿ø Å×ÀÌºí »ı¼º
+-- íšŒì› í…Œì´ë¸” ìƒì„±
 CREATE TABLE t_member(
     id VARCHAR2(20) primary key,
     pwd VARCHAR2(10),
@@ -8,15 +8,15 @@ CREATE TABLE t_member(
     joinDate DATE DEFAULT SYSDATE
 );
 
---È¸¿ø Á¤º¸ Ãß°¡
+--íšŒì› ì •ë³´ ì¶”ê°€
 INSERT INTO t_member
-VALUES('hong', '1212', 'È«±æµ¿', 'hong@gmail.com', sysdate);
+VALUES('hong', '1212', 'í™ê¸¸ë™', 'hong@gmail.com', sysdate);
 
 INSERT INTO t_member
-VALUES('lee', '1212', 'ÀÌ¼ø½Å', 'lee@test.com', sysdate);
+VALUES('lee', '1212', 'ì´ìˆœì‹ ', 'lee@test.com', sysdate);
 
 INSERT INTO t_member
-VALUES('kim', '1212', '±èÀ¯½Å', 'kim@jweb.com', sysdate);
+VALUES('kim', '1212', 'ê¹€ìœ ì‹ ', 'kim@jweb.com', sysdate);
 COMMIT;
 
 SELECT * FROM t_member;
