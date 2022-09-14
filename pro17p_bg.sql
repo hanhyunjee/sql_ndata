@@ -9,9 +9,10 @@ create table USER_t(
     userEmail VARCHAR2(20),
     primary key(userid)
 );
-insert into USER_t values('kkan','1234','±ñ¼î','³²','kkan@naver.com');
-insert into USER_t values('dong','1234','µ¿¿ø','³²','dong@naver.com');
-insert into USER_t values('spring','1234','º½ÀÌ','¿©','sping@naver.com');
+insert into USER_t values('kkan','1234','ê¹ì‡¼','ë‚¨','kkan@naver.com');
+insert into USER_t values('dong','1234','ë™ì›','ë‚¨','dong@naver.com');
+insert into USER_t values('spring','1234','ë´„ì´','ì—¬','sping@naver.com');
+insert into USER_t values('moon','1234','í¬ì¸','ì—¬','moon@naver.com');
 commit;
 
 SELECT
@@ -42,22 +43,22 @@ create table t_Board(
 );
 
 insert into t_board(articleNO, parentNO, title, content, imageFileName, writedate, id)
-values(1, 0, 'Áú¹®ÀÖ¾î¿ä', '¹Ì±¹¿©Çà ¾î¶²°¡¿ä.', null, sysdate, 'hong');
+values(1, 0, 'ì§ˆë¬¸ìˆì–´ìš”', 'ë¯¸êµ­ì—¬í–‰ ì–´ë–¤ê°€ìš”.', null, sysdate, 'hong');
 
 insert into t_board(articleNO, parentNO, title, content, imageFileName, writedate, id)
-values(2, 0, 'Áú¹®ÀÖ¾î¿ä.', 'º¸¶óÄ«ÀÌ °¡º¸°í½Í¾î¿ä', null, sysdate, 'hong');
+values(2, 0, 'ì§ˆë¬¸ìˆì–´ìš”.', 'ë³´ë¼ì¹´ì´ ê°€ë³´ê³ ì‹¶ì–´ìš”', null, sysdate, 'hong');
 
 insert into t_board(articleNO, parentNO, title, content, imageFileName, writedate, id)
-values(3, 2, '´äº¯ÀÔ´Ï´Ù.', '¿©Çà ÈÄ±â¿¡ ´ëÇÑ ³»¿ëÀÔ´Ï´Ù.', null, sysdate, 'dong');
+values(3, 2, 'ë‹µë³€ì…ë‹ˆë‹¤.', 'ì—¬í–‰ í›„ê¸°ì— ëŒ€í•œ ë‚´ìš©ì…ë‹ˆë‹¤.', null, sysdate, 'dong');
 
 insert into t_board(articleNO, parentNO, title, content, imageFileName, writedate, id)
-values(5, 3, '´äº¯ÀÔ´Ï´Ù.', '¿©Çà ÁÁ½À´Ï´Ù.', null, sysdate, 'lee');
+values(5, 3, 'ë‹µë³€ì…ë‹ˆë‹¤.', 'ì—¬í–‰ ì¢‹ìŠµë‹ˆë‹¤.', null, sysdate, 'lee');
 
 insert into t_board(articleNO, parentNO, title, content, imageFileName, writedate, id)
-values(4, 0, '°¡ÀÔÀÎ»ç', '±èÀ¯½Å °¡ÀÔÀÎ»çµå·Á¿ä', null, sysdate, 'kim');
+values(4, 0, 'ê°€ì…ì¸ì‚¬', 'ê¹€ìœ ì‹  ê°€ì…ì¸ì‚¬ë“œë ¤ìš”', null, sysdate, 'kim');
 
 insert into t_board(articleNO, parentNO, title, content, imageFileName, writedate, id)
-values(6, 2, '´äº¯ÀÔ´Ï´Ù', '¹İ°¡¿ö¿ä!!!', null, sysdate, 'lee');
+values(6, 2, 'ë‹µë³€ì…ë‹ˆë‹¤', 'ë°˜ê°€ì›Œìš”!!!', null, sysdate, 'lee');
 
 commit;
 

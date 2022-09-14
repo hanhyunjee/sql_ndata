@@ -1,19 +1,38 @@
+drop table member;
 create table member(
     name VARCHAR2(10),
     userid VARCHAR2(20),
     pwd VARCHAR2(10),
     email VARCHAR2(20),
-    phone CHAR(13),
-    admin number(1) default 0, -- 0:»ç¿ëÀÚ, 1:°ü¸®ÀÚ
     primary key(userid)
 );
 
-insert into member values('ÀÌ¼Ò¹Ì','somi','1234','gmd@naver.com','010-2362-5157',0);
-insert into member values('ÇÏ»ó¿À','sang12','1234','ha122naver.com','010-5629-8888',1);
-insert into member values('±èÀ±½Â','light','1234','youn1004@naver.com','010-9999-8282',0);
+insert into member values('±ñ¼î','kkan','1234','kkan@naver.com');
+insert into member values('µ¿¿ø','dong','1234','dong@naver.com');
+insert into member values('º½ºñ','spring','1234','sping@naver.com');
+commit;
 
 SELECT
     *
 FROM member;
 
 update member set pwd='1234' where name='ÀÌ¼Ò¹Ì';
+
+create table USER_t(
+    userID VARCHAR2(20),
+    userPassword VARCHAR2(10),
+    userName VARCHAR2(10),
+    userGender VARCHAR2(10),
+    userEmail VARCHAR2(20),
+    primary key(userid)
+);
+insert into USER_t values('kkan','1234','±ñ¼î','³²','kkan@naver.com');
+insert into USER_t values('dong','1234','µ¿¿ø','³²','dong@naver.com');
+insert into USER_t values('spring','1234','º½ÀÌ','¿©','sping@naver.com');
+commit;
+
+SELECT
+    *
+FROM USER_t;
+
+
